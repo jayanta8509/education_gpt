@@ -15,11 +15,14 @@ async def extract_pdf_text(pdf_input, start_page=0, end_page=None):
         if not os.path.exists(pdf_input):
             raise FileNotFoundError(f"PDF file not found: {pdf_input}")
         file = open(pdf_input, 'rb')
-    else:
+    elif isinstance(pdf_input, UploadFile):
         # If input is an uploaded file (SpooledTemporaryFile)
         # Read the file content into a BytesIO object
         file_content = await pdf_input.read()
         file = io.BytesIO(file_content)
+    else:
+        # If input is already a BytesIO object
+        file = pdf_input
     
     try:
         # Create a PDF reader object
@@ -90,6 +93,7 @@ async def process_document(
     try:
         # Extract text from the PDF
         extracted_text = await extract_pdf_text(pdf_input, start_page, end_page)
+        # print(extracted_text)
         
         # Generate report using OpenAI
         result = await generate_report_with_openai(
