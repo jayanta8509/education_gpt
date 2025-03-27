@@ -1,10 +1,79 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Slovenian Report</title>
+    <title>Ocena Poročila</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+        .container {
+            max-width: 700px;
+            background: white;
+            padding: 20px;
+            margin: auto;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+        h3 {
+            color: #3498db;
+            margin-top: 20px;
+            font-size: 22px; /* Increased font size */
+        }
+        p {
+            color: #555;
+            font-size: 16px;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #e74c3c;
+        }
+        .italic {
+            font-style: italic;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #777;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <h2>Slovenian Report</h2>
-    <p>{{ report_content }}</p>
+    <div class="container">
+        <h2>{{ report_content.title }}</h2>
+
+        <h3>Namen</h3>
+        <p>{{ report_content.purpose }}</p>
+
+        <h3>Izobraževanje in dosežki</h3>
+        <p>{{ report_content.education_and_accomplishments }}</p>
+
+        <h3>Sposobnost predavanja</h3>
+        <p>{{ report_content.ability_to_lecture }}</p>
+
+        <h3>Primernost</h3>
+        <p>{{ report_content.suitability }}</p>
+
+        <h3>Zaključek</h3>
+        <p><span class="highlight">Končne misli:</span> {{ report_content.conclusion }}</p>
+
+        <h3>Datum</h3>
+        <p class="italic">{{ report_content.date }}</p>
+
+        <h3>Evaluator</h3>
+        <p class="italic">{{ report_content.evaluator }}</p>
+
+        <div class="footer">
+            <p>Poslano prek avtomatiziranega sistema ocenjevanja</p>
+        </div>
+    </div>
 </body>
 </html>
