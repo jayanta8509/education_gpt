@@ -21,7 +21,7 @@ SMTP_HOST = "smtp.gmail.com"
 SMTP_PORT = 587
 SENDER_MAIL = "iksen.testmail@gmail.com"
 SENDER_PASS = "vrovvtukfbaxbubd"
-RECEIVER_MAIL = "research@almamater.at"
+RECEIVER_MAIL = "suvendu.iksen@gmail.com"
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__)) 
 TEMPLATES_DIR = os.path.join(BASE_DIR, "templates") 
