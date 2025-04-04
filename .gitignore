@@ -1,3 +1,4 @@
 .env
 env
 __pycache__
+#server :- gunicorn main:app --bind 0.0.0.0:8088 --timeout 8000 --workers 3 --worker-class uvicorn.workers.UvicornWorker --daemon
